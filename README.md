@@ -14,15 +14,9 @@
 
 多年BAT一线大厂架构经验倾囊相授
 
-### 联系我
 
-![联系我](https://github.com/wulimax/reactApp/blob/master/docs/PublicImage/user_shishan.jpg)
 
-### 公众号:石杉的架构笔记
 
-如果大家想要实时关注我更新的文章以及分享的干货的话，可以关注我的公众号。
-
-![我的公众号](https://github.com/wulimax/reactApp/blob/master/docs/PublicImage/shishan100.jpg)
 
 ## 编写目的
 
@@ -51,8 +45,15 @@
 ### JVM
 
 
+### 公众号:石杉的架构笔记
+
+如果大家想要实时关注我更新的文章以及分享的干货的话，可以关注我的公众号。
+
+![我的公众号](https://github.com/wulimax/reactApp/blob/master/docs/PublicImage/shishan100.jpg)
+
+
 ### 关于转载
-本仓库所有的文章系石杉的架构笔记原创文章,如需转载请先联系石杉的架构笔记,在得到授权基础放可转载，记得注明原文地址就可以了。
+本仓库所有文章系石杉的架构笔记原创文章，如需转载，请联系公众号石杉的架构笔记获取授权，否则将追究法律责任。
 
 
 

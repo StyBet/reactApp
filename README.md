@@ -12,8 +12,11 @@
 [![issues](https://badgen.net/github/open-issues/wulimax/reactApp)]
 [![PRs Welcome](https://badgen.net/badge/PRs/welcome/green)](http://makeapullrequest.com)
 
-
 多年BAT一线大厂架构经验倾囊相授
+
+
+
+
 
 ## 编写目的
 
@@ -26,9 +29,9 @@
 ### 分布式搜索引擎
 ### [分布式缓存](https://github.com/wulimax/reactApp/blob/master/docs/DistributedCache/README.md) 
 
-### 分库分表 
+### [分库分表](https://github.com/wangjianfengnb/reactApp/tree/database-sharding/docs/DatabaseSharding)
 ### 分布式锁 
-### 分布式事务 
+### [分布式事务](https://github.com/wulimax/reactApp/blob/master/docs/DistributedTransaction/README.md)
 ### 限流降级 
 
 
@@ -40,6 +43,22 @@
 ### 网络
 ### netty
 ### JVM
+
+
+### 公众号:石杉的架构笔记
+
+如果大家想要实时关注我更新的文章以及分享的干货的话，可以关注我的公众号。
+
+![我的公众号](https://github.com/wulimax/reactApp/blob/master/docs/PublicImage/shishan100.jpg)
+
+
+### 关于转载
+本仓库所有文章系石杉的架构笔记原创文章，如需转载，请联系公众号石杉的架构笔记获取授权，否则将追究法律责任。
+
+
+
+
+
 
 
 

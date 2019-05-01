@@ -1,4 +1,8 @@
-##1、构建一个HystrixCommand或者HystrixObservableCommand
+
+## hystrix执行时的8大流程以及内部原理流程图
+![](./image/hystrix执行时的8大流程以及内部原理.png)
+
+## 1、构建一个HystrixCommand或者HystrixObservableCommand
 
 一个HystrixCommand或一个HystrixObservableCommand对象，代表了对某个依赖服务发起的一次请求或者调用
 
@@ -10,7 +14,7 @@ HystrixObservableCommand主要用于可能会返回多条结果的调用
 HystrixCommand command = new HystrixCommand(arg1, arg2);
 HystrixObservableCommand command = new HystrixObservableCommand(arg1, arg2);
 
-##2、调用command的执行方法
+## 2、调用command的执行方法
 
 执行Command就可以发起一次对依赖服务的调用
 
@@ -32,23 +36,23 @@ execute()实际上会调用queue().get().queue()，接着会调用toObservable()
 
 也就是说，无论是哪种执行command的方式，最终都是依赖toObservable()去执行的
 
-##3、检查是否开启缓存
+## 3、检查是否开启缓存
 
 从这一步开始，进入我们的底层的运行原理啦，了解hysrix的一些更加高级的功能和特性
 
 如果这个command开启了请求缓存，request cache，而且这个调用的结果在缓存中存在，那么直接从缓存中返回结果
 
-##4、检查是否开启了短路器
+## 4、检查是否开启了短路器
 
 检查这个command对应的依赖服务是否开启了短路器
 
 如果断路器被打开了，那么hystrix就不会执行这个command，而是直接去执行fallback降级机制
 
-##5、检查线程池/队列/semaphore是否已经满了
+## 5、检查线程池/队列/semaphore是否已经满了
 
 如果command对应的线程池/队列/semaphore已经满了，那么也不会执行command，而是直接去调用fallback降级机制
 
-##6、执行command
+## 6、执行command
 
 调用HystrixObservableCommand.construct()或HystrixCommand.run()来实际执行这个command
 
@@ -65,7 +69,7 @@ HystrixObservableCommand.construct()是返回一个Observable对象，可以获�
 
 如果没有timeout的话，那么就会拿到一些调用依赖服务获取到的结果，然后hystrix会做一些logging记录和metric统计
 
-##7、短路健康检查
+## 7、短路健康检查
 
 Hystrix会将每一个依赖服务的调用成功，失败，拒绝，超时，等事件，都会发送给circuit breaker断路器
 
@@ -73,7 +77,7 @@ Hystrix会将每一个依赖服务的调用成功，失败，拒绝，超时，�
 
 短路器会根据这些统计次数来决定，是否要进行短路，如果打开了短路器，那么在一段时间内就会直接短路，然后如果在之后第一次检查发现调用成功了，就关闭断路器
 
-##8、调用fallback降级机制
+## 8、调用fallback降级机制
 
 在以下几种情况中，hystrix会调用fallback降级机制：run()或construct()抛出一个异常，短路器打开，线程池/队列/semaphore满了，command执行超时了
 
@@ -99,7 +103,7 @@ Hystrix会将每一个依赖服务的调用成功，失败，拒绝，超时，�
 对于observe()，返回一个Observable对象，但是调用subscribe()方法订阅它时，理解抛出调用者的onError方法
 对于toObservable()，返回一个Observable对象，但是调用subscribe()方法订阅它时，理解抛出调用者的onError方法
 
-##9、不同的执行方式
+## 9、不同的执行方式
 
 execute()，获取一个Future.get()，然后拿到单个结果
 queue()，返回一个Future

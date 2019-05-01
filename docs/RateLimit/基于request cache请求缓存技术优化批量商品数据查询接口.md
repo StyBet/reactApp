@@ -1,3 +1,8 @@
+## 基于request cache请求缓存技术优化批量商品数据查询
+
+![](./image/request cache的原理.png)
+
+
 
 1、创建command，2种command类型
 2、执行command，4种执行方式
@@ -36,7 +41,8 @@ context.shutdown();
 
 一般来说，在java web来的应用中，都是通过filter过滤器来实现的
 
-public class HystrixRequestContextServletFilter implements Filter {
+    
+    public class HystrixRequestContextServletFilter implements Filter {
 
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) 
      throws IOException, ServletException {
@@ -47,14 +53,15 @@ public class HystrixRequestContextServletFilter implements Filter {
             context.shutdown();
         }
     }
-}
+    } 
 
-@Bean
-public FilterRegistrationBean indexFilterRegistration() {
+
+    @Bean
+    public FilterRegistrationBean indexFilterRegistration() {
     FilterRegistrationBean registration = new FilterRegistrationBean(new IndexFilter());
     registration.addUrlPatterns("/");
     return registration;
-}
+    }
 
 结合咱们的业务背景，我们做了一个批量查询商品数据的接口，在这个里面，我们其实通过HystrixObservableCommand一次性批量查询多个商品id的数据
 
@@ -64,7 +71,7 @@ public FilterRegistrationBean indexFilterRegistration() {
 
 我们对批量查询商品数据的接口，可以用request cache做一个优化，就是说一次请求，就是一次request context，对相同的商品查询只能执行一次，其余的都走request cache
 
-public class CommandUsingRequestCache extends HystrixCommand<Boolean> {
+    public class CommandUsingRequestCache extends HystrixCommand<Boolean> {
 
     private final int value;
 
@@ -83,10 +90,10 @@ public class CommandUsingRequestCache extends HystrixCommand<Boolean> {
         return String.valueOf(value);
     }
 
-}
+    }
 
-@Test
-public void testWithCacheHits() {
+    @Test
+    public void testWithCacheHits() {
     HystrixRequestContext context = HystrixRequestContext.initializeContext();
     try {
         CommandUsingRequestCache command2a = new CommandUsingRequestCache(2);
@@ -116,11 +123,11 @@ public void testWithCacheHits() {
     } finally {
         context.shutdown();
     }
-}
+    }
 
 缓存的手动清理
 
-public static class GetterCommand extends HystrixCommand<String> {
+    public static class GetterCommand extends HystrixCommand<String> {
 
     private static final HystrixCommandKey GETTER_KEY = HystrixCommandKey.Factory.asKey("GetterCommand");
     private final int id;
@@ -141,20 +148,20 @@ public static class GetterCommand extends HystrixCommand<String> {
         return String.valueOf(id);
     }
 
-    /**
-     * Allow the cache to be flushed for this object.
-     * 
-     * @param id
-     *            argument that would normally be passed to the command
-     */
+	     /**
+	     * Allow the cache to be flushed for this object.
+	     * 
+	     * @param id
+	     *            argument that would normally be passed to the command
+	     */
     public static void flushCache(int id) {
         HystrixRequestCache.getInstance(GETTER_KEY,
                 HystrixConcurrencyStrategyDefault.getInstance()).clear(String.valueOf(id));
     }
 
-}
+    }
 
-public static class SetterCommand extends HystrixCommand<Void> {
+    public static class SetterCommand extends HystrixCommand<Void> {
 
     private final int id;
     private final String prefix;
@@ -174,4 +181,4 @@ public static class SetterCommand extends HystrixCommand<Void> {
         // no return value
         return null;
     }
-}
+    }

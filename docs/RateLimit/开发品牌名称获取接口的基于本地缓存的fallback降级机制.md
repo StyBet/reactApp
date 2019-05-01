@@ -1,9 +1,10 @@
+## fallback降级机制
 1、创建command
 2、执行command
 3、request cache
 4、短路器，如果打开了，fallback降级机制
 
-##1、fallback降级机制
+## 1、fallback降级机制
 
 hystrix调用各种接口，或者访问外部依赖，mysql，redis，zookeeper，kafka，等等，如果出现了任何异常的情况
 
@@ -37,7 +38,7 @@ run()抛出异常，超时，线程池或信号量满了，或短路了，都会
 
 调用品牌服务失败了，fallback降级就从本地内存中获取一份过期的数据，先凑合着用着
 
-public class CommandHelloFailure extends HystrixCommand<String> {
+    public class CommandHelloFailure extends HystrixCommand<String> {
 
     private final String name;
 
@@ -58,18 +59,18 @@ public class CommandHelloFailure extends HystrixCommand<String> {
 
 }
 
-@Test
-public void testSynchronous() {
+    @Test
+    public void testSynchronous() {
     assertEquals("Hello Failure World!", new CommandHelloFailure("World").execute());
-}
+    }
 
 HystrixObservableCommand，是实现resumeWithFallback方法
 
-##2.fallback.isolation.semaphore.maxConcurrentRequests
+## 2.fallback.isolation.semaphore.maxConcurrentRequests
 
 这个参数设置了HystrixCommand.getFallback()最大允许的并发请求数量，默认值是10，也是通过semaphore信号量的机制去限流
 
 如果超出了这个最大值，那么直接被reject
 
-HystrixCommandProperties.Setter()
-   .withFallbackIsolationSemaphoreMaxConcurrentRequests(int value)
+    HystrixCommandProperties.Setter()
+    .withFallbackIsolationSemaphoreMaxConcurrentRequests(int value)

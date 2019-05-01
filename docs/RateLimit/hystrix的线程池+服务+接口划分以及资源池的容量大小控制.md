@@ -1,4 +1,4 @@
-##1、execution.isolation.strategy
+## 1、execution.isolation.strategy
 
 指定了HystrixCommand.run()的资源隔离策略，THREAD或者SEMAPHORE，一种是基于线程池，一种是信号量
 
@@ -26,7 +26,7 @@ HystrixCommandProperties.Setter()
 HystrixCommandProperties.Setter()
    .withExecutionIsolationStrategy(ExecutionIsolationStrategy.SEMAPHORE)
 
-##2、command名称和command组
+## 2、command名称和command组
 
 线程池隔离，依赖服务->接口->线程池，如何来划分
 
@@ -45,7 +45,7 @@ command group，是一个非常重要的概念，默认情况下，因为就是�
 
 同一个command group中的请求，都会进入同一个线程池中
 
-##3、command线程池
+## 3、command线程池
 
 threadpool key代表了一个HystrixThreadPool，用来进行统一监控，统计，缓存
 
@@ -54,13 +54,13 @@ threadpool key代表了一个HystrixThreadPool，用来进行统一监控，统�
 每个command都会跟它的threadpool key对应的thread pool绑定在一起
 
 如果不想直接用command group，也可以手动设置thread pool name
-
-public CommandHelloWorld(String name) {
+    
+    public CommandHelloWorld(String name) {
     super(Setter.withGroupKey(HystrixCommandGroupKey.Factory.asKey("ExampleGroup"))
             .andCommandKey(HystrixCommandKey.Factory.asKey("HelloWorld"))
             .andThreadPoolKey(HystrixThreadPoolKey.Factory.asKey("HelloWorldPool")));
-    this.name = name;
-}
+    this.name = name;}
+
 
 command threadpool -> command group -> command key
 
@@ -100,16 +100,18 @@ command group一般来说，可以是对应一个服务，多个command key对�
 
 如果说你的command key，要用自己的线程池，可以定义自己的threadpool key，就ok了
 
-##4、coreSize
+## 4、coreSize
 
 设置线程池的大小，默认是10
 
-HystrixThreadPoolProperties.Setter()
+    HystrixThreadPoolProperties.Setter()
    .withCoreSize(int value)
+
+
 
 一般来说，用这个默认的10个线程大小就够了
 
-##5、queueSizeRejectionThreshold
+## 5、queueSizeRejectionThreshold
 
 控制queue满后reject的threshold，因为maxQueueSize不允许热修改，因此提供这个参数可以热修改，控制队列的最大大小
 
@@ -120,7 +122,7 @@ HystrixCommand在提交到线程池之前，其实会先进入一个队列中，
 HystrixThreadPoolProperties.Setter()
    .withQueueSizeRejectionThreshold(int value)
 
-##6.execution.isolation.semaphore.maxConcurrentRequests
+## 6.execution.isolation.semaphore.maxConcurrentRequests
 
 设置使用SEMAPHORE隔离策略的时候，允许访问的最大并发量，超过这个最大并发量，请求直接被reject
 
@@ -128,5 +130,6 @@ HystrixThreadPoolProperties.Setter()
 
 默认值是10，设置的小一些，否则因为信号量是基于调用线程去执行command的，而且不能从timeout中抽离，因此一旦设置的太大，而且有延时发生，可能瞬间导致tomcat本身的线程资源本占满
 
-HystrixCommandProperties.Setter()
-   .withExecutionIsolationSemaphoreMaxConcurrentRequests(int value)
+    HystrixCommandProperties.Setter()
+    .withExecutionIsolationSemaphoreMaxConcurrentRequests(int value)
+

@@ -50,6 +50,13 @@
 
 ### 公众号:石杉的架构笔记
 
+
+## 数据库篇(MySQL)
+### 索引
+### 锁
+### 日志
+### 事物
+
 如果大家想要实时关注我更新的文章以及分享的干货的话，可以关注我的公众号。
 
 ![我的公众号](https://github.com/wulimax/reactApp/blob/master/docs/PublicImage/shishan100.jpg)

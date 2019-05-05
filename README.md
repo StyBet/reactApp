@@ -25,7 +25,7 @@
 
 ##分布式系统篇
 
-###	分布式消息队
+###	[分布式消息队列](https://github.com/1574359445/reactApp/tree/master/docs/DistributedMessageQueue)
 ### 分布式搜索引擎
 ### [分布式缓存](https://github.com/wulimax/reactApp/blob/master/docs/DistributedCache/README.md) 
 

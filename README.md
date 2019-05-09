@@ -26,8 +26,7 @@
 ## 分布式系统篇
 
 ###	分布式消息队
-#### 消息如何顺序？
-#### 消息重复如何解决？可以在中间层解决吗？MQ体系了解吗？
+
 
 ### 分布式搜索引擎
 ### [分布式缓存](https://github.com/wulimax/reactApp/blob/master/docs/DistributedCache/README.md) 
@@ -44,7 +43,7 @@
 ### [并发](https://github.com/wulimax/reactApp/blob/master/docs/DataConcurrent/README.md)
 
 ### I/O
-#### nio、bio、aio都是什么以及有什么区别？说说nio的原理？
+
 
 ### 网络
 ### netty

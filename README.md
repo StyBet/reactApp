@@ -29,7 +29,7 @@
 ### 分布式搜索引擎
 ### [分布式缓存](https://github.com/wulimax/reactApp/blob/master/docs/DistributedCache/README.md) 
 
-### [分库分表](https://github.com/wangjianfengnb/reactApp/tree/database-sharding/docs/DatabaseSharding)
+### [分库分表](https://github.com/wulimax/reactApp/tree/master/docs/DatabaseSharding)
 ### 分布式锁 
 ### [分布式事务](https://github.com/wulimax/reactApp/blob/master/docs/DistributedTransaction/README.md)
 ### [限流降级](https://github.com/wulimax/reactApp/blob/master/docs/RateLimit/README.md)

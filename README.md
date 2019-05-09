@@ -41,7 +41,7 @@
 
 ## Java功底篇
 ### 集合
-###[并发](https://github.com/wulimax/reactApp/blob/master/docs/DataConcurrent/README.md)
+### [并发](https://github.com/wulimax/reactApp/blob/master/docs/DataConcurrent/README.md)
 
 ### I/O
 #### nio、bio、aio都是什么以及有什么区别？说说nio的原理？

@@ -56,21 +56,12 @@
     - [Git](#git)
     - [Docker](#Docker)
 
-## Java
-
-### 	基础
-
 ### 	[并发](https://github.com/wulimax/reactApp/blob/master/docs/DataConcurrent/README.md)
 
-### 	集合
+
 
 ### 	[JVM](https://github.com/wulimax/reactApp/blob/master/docs/ZhJVM/README.md)
 
-### 	I/O
-
-​	Dubbo
-
-### 	netty
 
 ## 网络
 

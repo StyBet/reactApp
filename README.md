@@ -35,16 +35,10 @@
     - [I/O](#io)
     - [Dubbo](#Dubbo)
     - [netty](#netty)
-- [网络](#网络)
-- [操作系统](#操作系统)
-    - [Linux相关](#linux相关)
-- [数据结构与算法](#数据结构与算法)
-    - [数据结构](#数据结构)
-    - [算法](#算法)
+- [网络](#网络)  
 - [数据库](#数据库)
     - [MySQL](#mysql)
     - [Redis](#redis)
-    - [mongodb](#mongodb)
 - [高可用高性能的分布式系统设计](#高可用高性能的分布式系统设计)
     - [分布式消息队列](#分布式消息队列)
     - [分布式搜索引擎](#分布式搜索引擎)
@@ -52,12 +46,8 @@
     - [备战面试](#备战面试)
     - [常见面试题总结](#常见面试题总结)
     - [面经](#面经)
-- [工具](#工具)
-    - [Git](#git)
-    - [Docker](#Docker)
 
 ### 	[并发](https://github.com/wulimax/reactApp/blob/master/docs/DataConcurrent/README.md)
-
 
 
 ### 	[JVM](https://github.com/wulimax/reactApp/blob/master/docs/ZhJVM/README.md)

@@ -46,10 +46,6 @@
     - [常见面试题总结](#常见面试题总结)
     - [面经](#面经)
 
-### 	[并发](https://github.com/wulimax/reactApp/blob/master/docs/DataConcurrent/README.md)
-
-
-### 	[JVM](https://github.com/wulimax/reactApp/blob/master/docs/ZhJVM/README.md)
 
 
 ## 面试指南

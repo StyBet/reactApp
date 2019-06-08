@@ -35,7 +35,6 @@
     - [I/O](#io)
     - [Dubbo](#Dubbo)
     - [netty](#netty)
-- [网络](#网络)  
 - [数据库](#数据库)
     - [MySQL](#mysql)
     - [Redis](#redis)

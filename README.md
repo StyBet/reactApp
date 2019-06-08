@@ -70,6 +70,7 @@
 - [哥们，消息中间件在你们项目里是如何落地的？](https://mp.weixin.qq.com/s?__biz=MzU0OTk3ODQ3Ng==&mid=2247484191&idx=1&sn=fac0c513cf9ad480fc39c5b51f6c4fde&chksm=fba6eb1cccd1620aa0b48c72d1c6b51706400f24268db6c774bac6ec02a0f31885db9b7d6cad&mpshare=1&scene=1&srcid=0608ZI28nnj1eXjYIlBg0oVb%23rd)
 - [哥们，那你说说系统架构引入消息中间件有什么缺点？](https://mp.weixin.qq.com/s?__biz=MzU0OTk3ODQ3Ng==&mid=2247484157&idx=1&sn=f4644be2db6b1c230846cb4d62ae5be9&chksm=fba6eafeccd163e817b420d57478829d92251a6a5fd446f81805f0983a0d95cb6853a6735c4b&mpshare=1&scene=1&srcid=06083A6RVW3ZtKQRy6Ttq8tK%23rd)
 - [哥们，你们的系统架构中为什么要引入消息中间件？](https://mp.weixin.qq.com/s?__biz=MzU0OTk3ODQ3Ng==&mid=2247484149&idx=1&sn=98186297335e13ec7222b3fd43cfae5a&chksm=fba6eaf6ccd163e0c2c3086daa725de224a97814d31e7b3f62dd3ec763b4abbb0689cc7565b0&mpshare=1&scene=1&srcid=0608fz8HKZvYxRhzFqyJ4Isq%23rd)
+- [线上服务宕机时，如何保证数据100%不丢失?](https://mp.weixin.qq.com/s?__biz=MzU0OTk3ODQ3Ng==&mid=2247484204&idx=1&sn=6fc43b0620857b653dbef20693d1c6c6&chksm=fba6eb2fccd16239056e4b52dc0895585292b830bfd2652dea81b7360556fe36aceac0951761&mpshare=1&scene=1&srcid=0608W9lqShQsPrfETC90Acwm%23rd)
 
 
 

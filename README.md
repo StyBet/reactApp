@@ -63,11 +63,6 @@
 ### 	[JVM](https://github.com/wulimax/reactApp/blob/master/docs/ZhJVM/README.md)
 
 
-### 算法
-
-- [每日一练](https://leetcode-cn.com/)
-
-
 ## 面试指南
 
 ### 备战面试
